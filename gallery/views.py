@@ -1,19 +1,13 @@
 from django.shortcuts import render
+from .models import Asset
+
 def home(request):
-    # Имитация данных из базы (список словарей)
-    fake_database = [
-        {'id': 1, 'name': 'Sci-Fi Helmet', 'file_size': '15 MB'},
-        {'id': 2, 'name': 'Old Chair', 'file_size': '2 MB'},
-        {'id': 3, 'name': 'Cyber Truck', 'file_size': '10 MB'},
-        {'id': 4, 'name': 'Cyber000 Truck', 'file_size': '20 MB'},
-    ]
+    assets = Asset.objects.all()
     context_data = {
-        'page_title': 'Главная Галерея',
-        'assets': fake_database, # Передаем весь список
+        'page_title': 'Главная Галерея 3D',
+        'assets': assets,
     }
     return render(request, 'gallery/index.html', context_data)
 
-
-
-def about(request): ##Самостоятельная 
+def about(request):
     return render(request, 'gallery/about.html')

@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Asset
 
-# Register your models here.
+@admin.register(Asset)
+class AssetAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    list_filter = ['created_at']
