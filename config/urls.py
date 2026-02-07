@@ -26,3 +26,11 @@ path('admin/', admin.site.urls),
 path('', home, name='home'),
 #path('about/', about, name='about'),
 ]
+
+
+from gallery.views import home, about  ### Самостоятельная добавьте about
+
+urlpatterns = [
+    path('', home, name='home'),
+    path('about/', about, name='about'),  # добавьте эту строку
+]

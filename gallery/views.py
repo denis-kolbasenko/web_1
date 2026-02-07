@@ -12,3 +12,8 @@ def home(request):
         'assets': fake_database, # Передаем весь список
     }
     return render(request, 'gallery/index.html', context_data)
+
+
+
+def about(request): ##Самостоятельная 
+    return render(request, 'gallery/about.html')
